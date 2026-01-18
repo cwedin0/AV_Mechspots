@@ -1,11 +1,11 @@
-﻿using RimWorld;
-using RimWorld.QuestGen;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using RimWorld;
+using RimWorld.QuestGen;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering;
 using Verse;
@@ -64,7 +64,7 @@ namespace AV_Mechspots
                 ApplyAssigned();
             }
             else
-            {  
+            {
                 ApplyAOE();
             }
         }
@@ -102,12 +102,12 @@ namespace AV_Mechspots
 
         #region Assigned Content
 
-        private Pawn AssignedPawn()     
+        private Pawn AssignedPawn()
         {
             Pawn pawn = CompAssigned.AssignedPawns.FirstOrFallback();
             if (pawn != null)
             {
-                if(Props.onlyTargetMechs && !pawn.RaceProps.IsMechanoid)
+                if (Props.onlyTargetMechs && !pawn.RaceProps.IsMechanoid)
                 {
                     Log.Error("[AV]Mechspots.CompGiveHediffAbove: Assigned Pawn is not a mechanoid while this mod only allows mechanoids. Check your XML...");
                 }
@@ -156,14 +156,14 @@ namespace AV_Mechspots
             //if (CompPowerTrader != null && !CompPowerTrader.PowerOn)
             //{
             //    return false;
-           // }
+            // }
             if (target.Dead || target.health == null)
             {
                 return false;
             }
             if (target.Position.DistanceTo(parent.Position) <= Props.range)
             {
-                if(target.Map == null || parent.Map != target.Map)  //is needed for it to not effect pawns on other maps, even if we use parent.Map.mapPawns.AllPawnsSpawned....
+                if (target.Map == null || parent.Map != target.Map)  //is needed for it to not effect pawns on other maps, even if we use parent.Map.mapPawns.AllPawnsSpawned....
                 {
                     return false;
                 }
@@ -220,7 +220,7 @@ namespace AV_Mechspots
 
         public override void PostDraw()
         {
-            if(Props.drawLine)
+            if (Props.drawLine)
             {
                 if (Props.onlyassigned)
                 {
@@ -247,7 +247,7 @@ namespace AV_Mechspots
                         }
                     }
                 }
-            }          
+            }
         }
     }
 }

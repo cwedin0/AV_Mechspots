@@ -10,7 +10,7 @@
         "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
         "projectName": "AV_Mechspots",
         "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
-        "packagesPath": "C:\\Users\\damnw\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\cwedi\\.nuget\\packages\\",
         "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
@@ -19,7 +19,7 @@
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\damnw\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\cwedi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -44,29 +44,11 @@
       "frameworks": {
         "net472": {
           "dependencies": {
-            "Krafs.Rimworld.Ref": {
-              "target": "Package",
-              "version": "[1.6.*-*, )"
-            },
             "Lib.Harmony": {
               "target": "Package",
               "version": "[2.3.6, )"
             }
           }
-        }
-      },
-      "runtimes": {
-        "win": {
-          "#import": []
-        },
-        "win-arm64": {
-          "#import": []
-        },
-        "win-x64": {
-          "#import": []
-        },
-        "win-x86": {
-          "#import": []
         }
       }
     }

@@ -1,9 +1,9 @@
-﻿using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -16,7 +16,7 @@ namespace AV_Mechspots
         {
             if (parent is MinifiedThing)
             {
-                if(MechspotsSettings.DebugLogging)
+                if (MechspotsSettings.DebugLogging)
                 {
                     Log.Message("AV_Mechspots.CompPowerCharger: I am minified");
                 }
@@ -34,7 +34,7 @@ namespace AV_Mechspots
 
                 return text;
             }
-            
+
             return "";
         }
     }

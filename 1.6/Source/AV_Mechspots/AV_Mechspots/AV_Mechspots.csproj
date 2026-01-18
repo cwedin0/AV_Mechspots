@@ -52,14 +52,15 @@
     <Compile Include="Main\WriteModInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.6.*-*" />
-    <PackageReference Include="Lib.Harmony">
-      <Version>2.3.6</Version>
-    </PackageReference>
+    <Reference Include="../../../../../../RimWorldWin64_Data/Managed/*.dll">
+			<Private>false</Private>
+		</Reference>
+    <Reference Include="C:/Program Files (x86)/Steam/steamapps/workshop/content/294100/2009463077/Current/Assemblies/0Harmony.dll">
+			<Private>false</Private>
+		</Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AV_Framework">
-      <HintPath>..\..\..\..\..\AV_Framework\1.6\Assemblies\AV_Framework.dll</HintPath>
+    <Reference Include="C:\program files (x86)\Steam\steamapps\workshop\content\294100\3237129936\1.6\Assemblies\AV_Framework.dll">
       <Private>False</Private>
     </Reference>
   </ItemGroup>

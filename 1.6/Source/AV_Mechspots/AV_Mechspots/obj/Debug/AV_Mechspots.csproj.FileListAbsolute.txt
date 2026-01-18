@@ -6,4 +6,3 @@ C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Sou
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.csproj.CoreCompileInputs.cache
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.dll
 C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Assemblies\AV_Mechspots.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechs.0DECB9E2.Up2Date

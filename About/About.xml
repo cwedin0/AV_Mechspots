@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>[AV] Mechanoid Spots</name>
+	<name>[AV] Mechanoid Spots 1.6</name>
 	<author>Veltaris</author>
 	<supportedVersions>
 		<li>1.5</li>
@@ -37,7 +37,11 @@
 		<li>wvc.sergkart.biotech.MoreMechanoidsWorkModes</li>
 	</loadBefore>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/ModIcon/AV_Mechtech</modIconPath>
-    <packageId>Veltaris.MechStations</packageId>
+    <packageId>Cwedin.MechStations</packageId>
 	<modVersion>1.02.00</modVersion>
-    <description>This mod is about controlling where your mechs guard or chill at, by giving them their own special spots.</description>
+    <description>This is an updated version of [AV] Mechanoid Spots by Veltaris, updated to work with RimWorld 1.6. Minor bugfixes have been implemented without feature changes.
+		
+Until Veltaris releases an official 1.6 update, I will attempt to maintain this version as I use it. This is a mod made for my personal modlist, no promises!
+
+This mod is about controlling where your mechs guard or chill at, by giving them their own special spots.</description>
 </ModMetaData>

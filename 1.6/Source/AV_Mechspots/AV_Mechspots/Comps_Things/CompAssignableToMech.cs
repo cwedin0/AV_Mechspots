@@ -1,10 +1,10 @@
-﻿using AV_Framework;
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+//using AV_Framework;
+using RimWorld;
 using UnityEngine;
 using Verse;
 
@@ -97,7 +97,7 @@ namespace AV_Mechspots
 
         public override void PostSpawnSetup(bool respawningAfterLoad)
         {
-            if(MinifiedPawn != null)
+            if (MinifiedPawn != null)
             {
                 if (MinifiedPawn.ownership.AssignedMeditationSpot == null)
                 {
@@ -115,7 +115,7 @@ namespace AV_Mechspots
                 Pawn pawn = assignedPawns.First();
                 TryUnassignPawn(pawn);
                 //ForceRemovePawn(pawn);
-            }            
+            }
         }
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
@@ -184,11 +184,11 @@ namespace AV_Mechspots
                             }
                         }
                         //else
-                        else if(WriteModInfo.PatchedThinkTreeDefs.Contains(AllSelectablePawns[i].RaceProps.thinkTreeMain))
-                        {                       
-                            if (CombatMechsAllowed()) 
+                        else if (WriteModInfo.PatchedThinkTreeDefs.Contains(AllSelectablePawns[i].RaceProps.thinkTreeMain))
+                        {
+                            if (CombatMechsAllowed())
                             {
-                                if (!AllSelectablePawns[i].RaceProps.IsWorkMech) 
+                                if (!AllSelectablePawns[i].RaceProps.IsWorkMech)
                                 {
                                     AllPlayerMechs.Add(AllSelectablePawns[i]);
                                 }
@@ -265,9 +265,9 @@ namespace AV_Mechspots
 
         public override void TryAssignPawn(Pawn pawn)
         {
-            if(MinifiedPawn != null)
+            if (MinifiedPawn != null)
             {
-                if(MinifiedPawn.ownership.AssignedMeditationSpot == parent)
+                if (MinifiedPawn.ownership.AssignedMeditationSpot == parent)
                 {
                     TryUnassignPawn(MinifiedPawn);
                 }
@@ -286,7 +286,7 @@ namespace AV_Mechspots
         public override void PostExposeData()
         {
             base.PostExposeData();
-            
+
             if (Scribe.mode == LoadSaveMode.PostLoadInit && assignedPawns.RemoveAll((Pawn x) => x.ownership.AssignedMeditationSpot != parent) > 0)
             {
                 Log.Warning(parent.ToStringSafe() + " had pawns assigned that don't have it as an assigned meditation spot. Removing.");
@@ -330,7 +330,7 @@ namespace AV_Mechspots
 
         public String GetAllowedDesc()
         {
-            if (AssignmentAllowCounter == (int)AllowedMechsForAssignment.onlyWorkMechs)  
+            if (AssignmentAllowCounter == (int)AllowedMechsForAssignment.onlyWorkMechs)
             {
                 return "AV_Gizmo_AllowedMechs_OnlyWorkMechs".Translate();
             }
@@ -359,7 +359,7 @@ namespace AV_Mechspots
             {
                 return ContentFinder<Texture2D>.Get("UI/Gizmos/AV_Only_CombatMechs");
             }
-            if(AssignmentAllowCounter == (int)AllowedMechsForAssignment.disallowAll)
+            if (AssignmentAllowCounter == (int)AllowedMechsForAssignment.disallowAll)
             {
                 return ContentFinder<Texture2D>.Get("UI/Gizmos/AV_No_Mechs");
             }
@@ -398,10 +398,10 @@ namespace AV_Mechspots
                 {
                     ChangeAllowedMechType((int)AllowedMechsForAssignment.disallowAll, true);
 
-                    if(MechspotsSettings.DebugLogging) 
+                    if(MechspotsSettings.DebugLogging)
                     {
-                        Log.Message("Assignmentcounter changed to " + AllowCounterToString()); 
-                    }               
+                        Log.Message("Assignmentcounter changed to " + AllowCounterToString());
+                    }
                 }, MenuOptionPriority.High),
             };
             Find.WindowStack.Add(new FloatMenu(options));
@@ -420,7 +420,7 @@ namespace AV_Mechspots
                         CompAssignableToMech comp = building.GetComp<CompAssignableToMech>();
                         comp.AssignmentAllowCounter = ChangeTo;
 
-                        if(removeAssigned)
+                        if (removeAssigned)
                         {
                             if (comp.assignedPawns.Count >= 1)
                             {
@@ -439,7 +439,7 @@ namespace AV_Mechspots
         #region Rotation
         public Texture2D GetRotationIcon()
         {
-            if(AllowedRotation == (int)AllowedRotationForAssignment.any)
+            if (AllowedRotation == (int)AllowedRotationForAssignment.any)
             {
                 return ContentFinder<Texture2D>.Get("UI/Gizmos/AV_mechrotation_any");
             }
@@ -535,7 +535,7 @@ namespace AV_Mechspots
                     yield return command_Action;
                 }
                 */
-                
+
                 //assign pawn
                 if (AssignmentAllowCounter != (int)AllowedMechsForAssignment.disallowAll)
                 {
@@ -614,7 +614,7 @@ namespace AV_Mechspots
 
                 }
 
-                if(Find.Selector.SelectedObjectsListForReading.Count <= 1)
+                if (Find.Selector.SelectedObjectsListForReading.Count <= 1)
                 {
                     Command_Action copy_Action = new Command_Action();
                     copy_Action.defaultLabel = "CommandCopyZoneSettingsLabel".Translate().CapitalizeFirst();
@@ -626,7 +626,7 @@ namespace AV_Mechspots
                     };
                     yield return copy_Action;
                 }
-                
+
                 if (MechSpotUtility.CanPaste)
                 {
                     Command_Action paste_Action = new Command_Action();
@@ -646,7 +646,7 @@ namespace AV_Mechspots
 
         public override void DrawGUIOverlay()
         {
-            if(AssignmentAllowCounter == (int)AllowedMechsForAssignment.disallowAll)    //only draw if assignment is allowed from spot
+            if (AssignmentAllowCounter == (int)AllowedMechsForAssignment.disallowAll)    //only draw if assignment is allowed from spot
             {
                 return;
             }
@@ -676,31 +676,31 @@ namespace AV_Mechspots
                         {
                             Color defaultThingLabelColor = GenMapUI.DefaultThingLabelColor;
 
-                            if (FrameworkSettings.UseColoredMechlinkRange && MechspotsSettings.AllowMechaitorColoredAssignmentLabels)
-                            {
-                                try
-                                {
-                                    defaultThingLabelColor = Current.Game.GetComponent<GameComponent_Mechlink>().GetColor(pawn.GetOverseer());
-                                }
-                                catch
-                                {
-                                    defaultThingLabelColor = GenMapUI.DefaultThingLabelColor;
-                                }
-                            }
-                            else
-                            {
-                                if (MechspotsSettings.AllowDeadColoredAssignmentLabels)
-                                {
-                                    if (pawn.Dead && pawn.Corpse == null)
-                                    {
-                                        defaultThingLabelColor = Color.red;
-                                    }
-                                    else if (pawn.Destroyed)
-                                    {
-                                        defaultThingLabelColor = Color.yellow;
-                                    }
-                                }
-                            }
+                            // if (FrameworkSettings.UseColoredMechlinkRange && MechspotsSettings.AllowMechaitorColoredAssignmentLabels)
+                            // {
+                            //     try
+                            //     {
+                            //         defaultThingLabelColor = Current.Game.GetComponent<GameComponent_Mechlink>().GetColor(pawn.GetOverseer());
+                            //     }
+                            //     catch
+                            //     {
+                            //         defaultThingLabelColor = GenMapUI.DefaultThingLabelColor;
+                            //     }
+                            // }
+                            // else
+                            // {
+                            //     if (MechspotsSettings.AllowDeadColoredAssignmentLabels)
+                            //     {
+                            //         if (pawn.Dead && pawn.Corpse == null)
+                            //         {
+                            //             defaultThingLabelColor = Color.red;
+                            //         }
+                            //         else if (pawn.Destroyed)
+                            //         {
+                            //             defaultThingLabelColor = Color.yellow;
+                            //         }
+                            //     }
+                            // }
 
                             GenMapUI.DrawThingLabel(parent, assignedPawns[0].LabelShort, defaultThingLabelColor);
                         }

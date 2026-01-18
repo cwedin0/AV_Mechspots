@@ -1,12 +1,12 @@
-﻿using RimWorld;
-using RimWorld.QuestGen;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.NetworkInformation;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using RimWorld;
+using RimWorld.QuestGen;
 using UnityEngine;
 using Verse;
 
@@ -16,7 +16,7 @@ namespace AV_Mechspots
     public class Comp_ChargeSpot : ThingComp
     {
 
-        
+
 
         public CompProperties_ChargeSpot Props => (CompProperties_ChargeSpot)props;
 
@@ -24,7 +24,7 @@ namespace AV_Mechspots
 
         private CompAssignableToMech AssignedToMech => parent.TryGetComp<CompAssignableToMech>();
 
-        private Comp_GiveHediffAbove CompHediffOnTop => parent.TryGetComp<Comp_GiveHediffAbove>(); 
+        private Comp_GiveHediffAbove CompHediffOnTop => parent.TryGetComp<Comp_GiveHediffAbove>();
 
         private int TickCounter = 0;
         private int ticksUntilCharge = 0;
@@ -54,7 +54,7 @@ namespace AV_Mechspots
 
         public override void PostDestroy(DestroyMode mode, Map previousMap)
         {
-            if(MechspotsSettings.ChargingSocketProducesWaste)
+            if (MechspotsSettings.ChargingSocketProducesWaste)
             {
                 if (FilledWithWaste >= MechspotsSettings.ChargingSocketWasteStorageSpace)
                 {
@@ -76,7 +76,7 @@ namespace AV_Mechspots
 
         public void CalcTicksAndEnergyGain()
         {
-            ticksUntilCharge = Props.basechargingtime / powerlevel;                 
+            ticksUntilCharge = Props.basechargingtime / powerlevel;
             energygainPercentage = Props.basepowerpercharge * MechspotsSettings.ChargingSocketEfficiency;
         }
 
@@ -97,7 +97,7 @@ namespace AV_Mechspots
 
         public override void CompTick()
         {
-            
+
             //check if power is on
             if (parent.MapHeld.gameConditionManager.ElectricityDisabled(parent.MapHeld))
             {
@@ -107,13 +107,13 @@ namespace AV_Mechspots
             {
                 return;
             }
-            else if(PowerTrader == null)
+            else if (PowerTrader == null)
             {
                 Log.Error("[AV]Mechspots.Comps_ChargeSpot: has no power trader and wont work!");
                 return;
             }
 
-            
+
 
             //UpdatePowerNeed();
 
@@ -138,7 +138,7 @@ namespace AV_Mechspots
                 return;
             }
 
-            
+
 
             //initilize ticks Until spawn
             if (ticksUntilCharge <= 0)
@@ -156,14 +156,14 @@ namespace AV_Mechspots
             Charge();
             ResetCounter();    //reset so new pulsecounter can start
         }
-       
+
         public int CalcChargePower(int powerlevel)
         {
             return -(int)MechspotsSettings.ChargeSpotPowerUsage + ((powerlevel - 1) * -(int)MechspotsSettings.ChargeSpotPowerUsageAddition);
         }
         public void UpdatePowerNeed(bool inuse)
         {
-            if(inuse)
+            if (inuse)
             {
                 PowerTrader.PowerOutput = CalcChargePower(powerlevel);
             }
@@ -178,7 +178,7 @@ namespace AV_Mechspots
         {
             Pawn mech = AssignedMech();
 
-            if(mech == null)    //failsafe
+            if (mech == null)    //failsafe
             {
                 return;
             }
@@ -240,7 +240,7 @@ namespace AV_Mechspots
                     ChangePowerLevel(4);
                     //powerlevel = 4;
                     //CalcTicksAndEnergyGain();
-                    if (MechspotsSettings.DebugLogging) { Log.Message("[AV]Mechspots.Comps_ChargeSpot: powerlevel changed to " + powerlevel); } 
+                    if (MechspotsSettings.DebugLogging) { Log.Message("[AV]Mechspots.Comps_ChargeSpot: powerlevel changed to " + powerlevel); }
                 }, MenuOptionPriority.High),
                 new FloatMenuOption("AV_Gizmo_Powerlvl_high".Translate().CapitalizeFirst() + " (" + -CalcChargePower(3) + "W)", delegate
                 {
@@ -264,7 +264,7 @@ namespace AV_Mechspots
                     if (MechspotsSettings.DebugLogging) { Log.Message("[AV]Mechspots.Comps_ChargeSpot: powerlevel changed to " + powerlevel); }
                 }, MenuOptionPriority.High),
             };
-            Find.WindowStack.Add(new FloatMenu(options));           
+            Find.WindowStack.Add(new FloatMenu(options));
         }
 
         private void ChangePowerLevel(int ChangeTo)
@@ -336,7 +336,7 @@ namespace AV_Mechspots
             if (Props.writeTimeForCharge || MechspotsSettings.DebugLogging)
             {
                 int time = ticksUntilCharge - TickCounter;
-                
+
                 if (CompHediffOnTop.AssignedOnTop(AssignedMech()))
                 {
                     CalcTicksAndEnergyGain();
@@ -346,12 +346,12 @@ namespace AV_Mechspots
 
                 if (MechspotsSettings.ChargingSocketProducesWaste)
                 {
-                    waste_text = "AV_ChargeSpot_Waste".Translate().CapitalizeFirst() + ": " + Math.Round(FilledWithWaste / MechspotsSettings.ChargingSocketWasteStorageSpace * 100, 1) + "% (" + Math.Round(FilledWithWaste,1) + "/" + MechspotsSettings.ChargingSocketWasteStorageSpace + ")\n";
+                    waste_text = "AV_ChargeSpot_Waste".Translate().CapitalizeFirst() + ": " + Math.Round(FilledWithWaste / MechspotsSettings.ChargingSocketWasteStorageSpace * 100, 1) + "% (" + Math.Round(FilledWithWaste, 1) + "/" + MechspotsSettings.ChargingSocketWasteStorageSpace + ")\n";
                 }
 
                 float energyperday = energygainPercentage * (60000f / (float)ticksUntilCharge);
 
-                string energycharged = "\n(" + energygainPercentage * 100f + "% "+ "AV_ChargeSpot_EnergyCharged".Translate() + " | " + energyperday * 100f + "% " + "AV_ChargeSpot_EnergyPerDay".Translate() + ")";
+                string energycharged = "\n(" + energygainPercentage * 100f + "% " + "AV_ChargeSpot_EnergyCharged".Translate() + " | " + energyperday * 100f + "% " + "AV_ChargeSpot_EnergyPerDay".Translate() + ")";
 
                 if (parent.MapHeld.gameConditionManager.ElectricityDisabled(parent.MapHeld))
                 {
@@ -367,16 +367,16 @@ namespace AV_Mechspots
                 }
                 if (MechspotsSettings.DebugLogging)
                 {
-                    return waste_text + "AV_ChargeSpot_NextChargeIn".Translate().CapitalizeFirst() + ": " + time.ToStringTicksToPeriod().Colorize(ColoredText.DateTimeColor) + energycharged + "\nTick counter: " + TickCounter + ", Ticks until pulse: " + ticksUntilCharge ;
+                    return waste_text + "AV_ChargeSpot_NextChargeIn".Translate().CapitalizeFirst() + ": " + time.ToStringTicksToPeriod().Colorize(ColoredText.DateTimeColor) + energycharged + "\nTick counter: " + TickCounter + ", Ticks until pulse: " + ticksUntilCharge;
                 }
                 else
                 {
                     return waste_text + "AV_ChargeSpot_NextChargeIn".Translate().CapitalizeFirst() + ": " + time.ToStringTicksToPeriod().Colorize(ColoredText.DateTimeColor) + energycharged;
                 }
-               
+
             }
             return "";
-            
+
         }
     }
 }
