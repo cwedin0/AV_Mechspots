@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "H2+bQaXHBJM=",
+  "dgSpecHash": "5V9kecxwnXI=",
   "success": true,
   "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\cwedi\\.nuget\\packages\\lib.harmony\\2.3.6\\lib.harmony.2.3.6.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }

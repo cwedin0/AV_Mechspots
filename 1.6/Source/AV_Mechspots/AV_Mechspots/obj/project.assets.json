@@ -1,76 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETFramework,Version=v4.7.2": {
-      "Lib.Harmony/2.3.6": {
-        "type": "package",
-        "compile": {
-          "lib/net472/0Harmony.dll": {
-            "related": ".pdb;.xml"
-          }
-        },
-        "runtime": {
-          "lib/net472/0Harmony.dll": {
-            "related": ".pdb;.xml"
-          }
-        }
-      }
-    }
+    ".NETFramework,Version=v4.7.2": {}
   },
-  "libraries": {
-    "Lib.Harmony/2.3.6": {
-      "sha512": "HqXPz33Z+R8ZDCLS5pJZthg33AMdF1bQXUbz2V7Neb9E+sMQOf4S1wquhM4pLIZFX7BZcOQubclbVreiM1+qmw==",
-      "type": "package",
-      "path": "lib.harmony/2.3.6",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "HarmonyLogo.png",
-        "LICENSE",
-        "README.md",
-        "lib.harmony.2.3.6.nupkg.sha512",
-        "lib.harmony.nuspec",
-        "lib/net35/0Harmony.dll",
-        "lib/net35/0Harmony.pdb",
-        "lib/net35/0Harmony.xml",
-        "lib/net452/0Harmony.dll",
-        "lib/net452/0Harmony.pdb",
-        "lib/net452/0Harmony.xml",
-        "lib/net472/0Harmony.dll",
-        "lib/net472/0Harmony.pdb",
-        "lib/net472/0Harmony.xml",
-        "lib/net48/0Harmony.dll",
-        "lib/net48/0Harmony.pdb",
-        "lib/net48/0Harmony.xml",
-        "lib/net5.0/0Harmony.dll",
-        "lib/net5.0/0Harmony.pdb",
-        "lib/net5.0/0Harmony.xml",
-        "lib/net6.0/0Harmony.dll",
-        "lib/net6.0/0Harmony.pdb",
-        "lib/net6.0/0Harmony.xml",
-        "lib/net7.0/0Harmony.dll",
-        "lib/net7.0/0Harmony.pdb",
-        "lib/net7.0/0Harmony.xml",
-        "lib/net8.0/0Harmony.dll",
-        "lib/net8.0/0Harmony.pdb",
-        "lib/net8.0/0Harmony.xml",
-        "lib/net9.0/0Harmony.dll",
-        "lib/net9.0/0Harmony.pdb",
-        "lib/net9.0/0Harmony.xml",
-        "lib/netcoreapp3.0/0Harmony.dll",
-        "lib/netcoreapp3.0/0Harmony.pdb",
-        "lib/netcoreapp3.0/0Harmony.xml",
-        "lib/netcoreapp3.1/0Harmony.dll",
-        "lib/netcoreapp3.1/0Harmony.pdb",
-        "lib/netcoreapp3.1/0Harmony.xml",
-        "lib/netstandard2.0/_._"
-      ]
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETFramework,Version=v4.7.2": [
-      "Lib.Harmony >= 2.3.6"
-    ]
+    ".NETFramework,Version=v4.7.2": []
   },
   "packageFolders": {
     "C:\\Users\\cwedi\\.nuget\\packages\\": {},
@@ -79,14 +14,12 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
+      "projectUniqueName": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
       "projectName": "AV_Mechspots",
-      "projectPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
+      "projectPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
       "packagesPath": "C:\\Users\\cwedi\\.nuget\\packages\\",
-      "outputPath": "c:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\obj\\",
+      "outputPath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\obj\\",
       "projectStyle": "PackageReference",
-      "skipContentFileWrite": true,
-      "UsingMicrosoftNETSdk": false,
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
@@ -104,23 +37,26 @@
       },
       "frameworks": {
         "net472": {
+          "targetAlias": "net472",
           "projectReferences": {}
         }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
       },
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net472": {
-        "dependencies": {
-          "Lib.Harmony": {
-            "target": "Package",
-            "version": "[2.3.6, )"
-          }
-        }
+        "targetAlias": "net472",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.306\\RuntimeIdentifierGraph.json"
       }
     }
   }
