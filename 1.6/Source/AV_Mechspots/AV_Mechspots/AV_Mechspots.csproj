@@ -22,9 +22,10 @@
     <Reference Include="../../../../../../RimWorldWin64_Data/Managed/*.dll">
 			<Private>false</Private>
 		</Reference>
-    <Reference Include="C:\Program Files (x86)\Steam\steamapps\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll">
-      <Private>false</Private>
-    </Reference>
+    <PackageReference Include="Lib.Harmony.Ref">
+        <PrivateAssets>all</PrivateAssets>
+        <IncludeAssets>compile</IncludeAssets>
+    </PackageReference>
     <Reference Include="C:\program files (x86)\Steam\steamapps\workshop\content\294100\3237129936\1.6\Assemblies\AV_Framework.dll">
       <Private>false</Private>
     </Reference>
