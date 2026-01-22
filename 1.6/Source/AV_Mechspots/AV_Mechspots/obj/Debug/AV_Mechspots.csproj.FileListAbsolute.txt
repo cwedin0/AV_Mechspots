@@ -1,9 +1,0 @@
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.5\Assemblies\AV_Mechspots.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.5\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.5\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.5\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.csproj.AssemblyReference.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.csproj.CoreCompileInputs.cache
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Assemblies\AV_Mechspots.dll
-C:\Program Files (x86)\Steam\steamapps\common\RimWorld\Mods\AV_Mechspots\1.6\Source\AV_Mechspots\AV_Mechspots\obj\Debug\AV_Mechspots.GeneratedMSBuildEditorConfig.editorconfig
