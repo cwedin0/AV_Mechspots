@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Patch>
 
-		<!-- AV_Machanoid_Sockets -->	
+	<!-- research tab -->
+	<Operation Class="PatchOperationConditional">
+		<xpath>Defs/ResearchTabDef[defName="AV_Research"]</xpath>
+		<nomatch Class="PatchOperationAdd">
+			<xpath>Defs</xpath>
+			<value>
+				<ResearchTabDef>
+					<defName>AV_Research</defName>
+					<label>Mechtech</label>
+					<generalTitle>[AV] Mechtech research projects</generalTitle>
+					<generalDescription>Unlock technologies from [AV] Mods by researching at a research bench, mostly centered around mechtech.</generalDescription>
+				</ResearchTabDef>
+			</value>
+		</nomatch>
+	</Operation>
+
+	<!-- AV_Machanoid_Sockets -->	
 	<Operation Class="PatchOperationConditional">
 		<xpath>Defs/ResearchProjectDef[defName="AV_Machanoid_Sockets"]</xpath>
 		<nomatch Class="PatchOperationAdd">
