@@ -1,7 +1,7 @@
-﻿using HarmonyLib;
-using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using HarmonyLib;
+using RimWorld;
 using UnityEngine;
 using UnityEngine.UIElements;
 using Verse;
@@ -20,7 +20,14 @@ namespace AV_Mechspots
             : base(content)
         {
             Harmony harmony = new Harmony("AV_Mechspots");
-            harmony.PatchAll();
+
+            harmony.PatchAllUncategorized();
+
+            // Patch categories with names equal to a packageid
+            // in the current active modlist.
+            LoadedModManager.RunningModsListForReading
+                .ForEach(mod => harmony.PatchCategory(mod.PackageId));
+
             _instance = this;
         }
     }
@@ -132,7 +139,7 @@ namespace AV_Mechspots
         }
     }
     */
-    
+
     //mech gizmo jump to spot
     [StaticConstructorOnStartup]
     public static class Pawn_GetGizmos_Patch
@@ -195,8 +202,8 @@ namespace AV_Mechspots
 
                 if (pawn.ownership.AssignedMeditationSpot.Map != pawn.Map
                     || !pawn.ownership.AssignedMeditationSpot.HasComp<CompAssignableToMech>()
-                    || !pawn.ownership.AssignedMeditationSpot.GetComp<CompAssignableToMech>().UseAsRecharger 
-                    || !pawn.CanReserveAndReach(pawn.ownership.AssignedMeditationSpot, PathEndMode.OnCell, Danger.Deadly) 
+                    || !pawn.ownership.AssignedMeditationSpot.GetComp<CompAssignableToMech>().UseAsRecharger
+                    || !pawn.CanReserveAndReach(pawn.ownership.AssignedMeditationSpot, PathEndMode.OnCell, Danger.Deadly)
                     || !pawn.ownership.AssignedMeditationSpot.Position.InAllowedArea(pawn))
                 {
                     return;
@@ -286,7 +293,7 @@ namespace AV_Mechspots
                 return;
             }
 
-            
+
 
             if (MechSpotUtility.ShouldSelfShutDownOnSpot(pawn))
             {

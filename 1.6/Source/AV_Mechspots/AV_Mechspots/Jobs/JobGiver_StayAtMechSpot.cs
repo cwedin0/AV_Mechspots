@@ -1,21 +1,31 @@
-﻿using RimWorld;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using UnityEngine;
-using Verse.AI;
-using Verse.Sound;
-using Verse;
-using Verse.Noise;
 using AV_Framework;
+using RimWorld;
+using UnityEngine;
+using Verse;
+using Verse.AI;
+using Verse.Noise;
+using Verse.Sound;
 using static RimWorld.MechClusterSketch;
 
 namespace AV_Mechspots
 {
     class JobGiver_StayAtMechSpot : ThinkNode_JobGiver
     {
+        /// <summary>
+        /// Wrapper class to allow redirecting jobs to
+        /// AV_Mechspots.JobGiver_StayAtMechSpot
+        /// <param name="pawn"></param>
+        /// <returns></returns>
+        public Job CallTryGiveJob(Pawn pawn)
+        {
+            return TryGiveJob(pawn);
+        }
+
         protected override Job TryGiveJob(Pawn pawn)        //find a assigned meditation spot for fluoid to work on
         {
             if (!pawn.IsColonyMech)     //failsafe
@@ -23,13 +33,13 @@ namespace AV_Mechspots
                 return null;
             }
             if (pawn.ownership.AssignedMeditationSpot == null)
-            {          
+            {
                 return null;
             }
             Map map = pawn.Map;
             if (map != null)
             {
-                if(!MechspotsSettings.AllowUsageUnpoweredSpots && map.gameConditionManager.ElectricityDisabled(map))        //fix for non electric spots to stop working
+                if (!MechspotsSettings.AllowUsageUnpoweredSpots && map.gameConditionManager.ElectricityDisabled(map))        //fix for non electric spots to stop working
                 {
                     return null;
                 }
@@ -58,10 +68,10 @@ namespace AV_Mechspots
             {
                 return null;
             }
-            
+
             CompPowerTrader comp = spot.GetComp<CompPowerTrader>();
 
-            if(comp != null && !comp.PowerOn && !MechspotsSettings.AllowUsageUnpoweredSpots)   //needs power and power is off  -> allows charged stone to work without electricity
+            if (comp != null && !comp.PowerOn && !MechspotsSettings.AllowUsageUnpoweredSpots)   //needs power and power is off  -> allows charged stone to work without electricity
             {
                 return null;
             }

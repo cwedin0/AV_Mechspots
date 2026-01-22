@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "URxOCgEihF0=",
+  "dgSpecHash": "zGZwZ1291Ww=",
   "success": true,
   "projectFilePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
   "expectedPackageFiles": [
@@ -17,7 +17,7 @@
       "filePath": "C:\\Program Files (x86)\\Steam\\steamapps\\common\\RimWorld\\Mods\\AV_Mechspots\\1.6\\Source\\AV_Mechspots\\AV_Mechspots\\AV_Mechspots.csproj",
       "libraryId": "Lib.Harmony.Ref",
       "targetGraphs": [
-        ".NETFramework,Version=v4.7.2"
+        ".NETFramework,Version=v4.8"
       ]
     }
   ]
