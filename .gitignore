@@ -1,4 +1,4 @@
-*/obj/
-*/.vs/
-*/Assemblies/
+**/obj/
+**/.vs/
+**/Assemblies/
 AV_Mechspots.code-workspace
