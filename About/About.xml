@@ -38,7 +38,7 @@
 	</loadBefore>
 	<modIconPath IgnoreIfNoMatchingField="True">UI/ModIcon/AV_Mechtech</modIconPath>
     <packageId>Cwedin.MechStations</packageId>
-	<modVersion>1.02.00</modVersion>
+	<modVersion>1.02.01</modVersion>
     <description>This is an updated version of [AV] Mechanoid Spots by Veltaris, updated to work with RimWorld 1.6. Minor bugfixes have been implemented without feature changes.
 		
 Until Veltaris releases an official 1.6 update, I will attempt to maintain this version as I use it. This is a mod made for my personal modlist, no promises!
